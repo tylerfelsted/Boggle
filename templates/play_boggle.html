@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/generate-board">
+    <button>New Game</button>
+</form>
+
+<table>
+    {% for row in board %}
+    <tr>
+        {% for letter in row %}
+        <td class="letter">
+            {{letter}}
+        </td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+
+<form action="" id="guess-form">
+    <input type="text" id="form-input" placeholder="input guess" name="guess">
+    <button>Submit Guess!</button>
+</form>
+
+<div>
+    <h2>Score: <span id="score"></span></h2>
+</div>
+
+<div id="message"></div>
+
+<div>
+    <ul id="word-list">
+    </ul>
+</div>
+{% endblock %}

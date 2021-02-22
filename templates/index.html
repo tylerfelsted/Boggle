@@ -1,20 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<table>
-    {% for row in board %}
-    <tr>
-        {% for letter in row %}
-        <td class="letter">
-            {{letter}}
-        </td>
-        {% endfor %}
-    </tr>
-    {% endfor %}
-</table>
 
-<form action="" id="guess-form">
-    <input type="text" id="form-input" placeholder="input guess" name="guess">
-    <button>Submit Guess!</button>
+<form action="/generate-board" id="guess-form">
+    <button>Start Game!</button>
 </form>
 {% endblock %}
