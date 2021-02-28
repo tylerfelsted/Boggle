@@ -24,7 +24,7 @@ class FlaskTests(TestCase):
     
     def test_redirect_generate_board(self):
         with app.test_client() as client:
-            res = client.get('generate-board', follow_redirects=True)
+            res = client.get('/generate-board', follow_redirects=True)
             html = res.get_data(as_text=True)
 
             self.assertEqual(res.status_code, 200)
